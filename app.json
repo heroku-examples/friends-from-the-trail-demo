@@ -1,0 +1,25 @@
+{
+  "name": "Pure Heroku Demo",
+  "description": "",
+  "website": "https://pure-heroku-demo.herokuapp.com",
+  "repository": "https://github.com/andyet/pure-heroku-demo",
+  "buildpacks": [
+    {
+      "url": "heroku/nodejs"
+    }
+  ],
+  "addons": [
+    "heroku-kafka:basic-0",
+    "bucketeer:micro",
+    "heroku-postgresql:hobby-basic"
+  ],
+  "environments": {
+    "review": {
+      "addons": [
+        "heroku-kafka:basic-0",
+        "bucketeer:micro",
+        "heroku-postgresql:hobby-basic"
+      ]
+    }
+  }
+}
