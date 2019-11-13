@@ -126,6 +126,36 @@ body.background-3 {
   bottom: 8%;
 }
 
+#regional-flags {
+  height: 50%;
+  position: absolute;
+  left: 15%;
+  bottom: 20%;
+}
+
+#flagpole {
+  height: 100%;
+  position: absolute;
+  transform: translateX(-60%);
+}
+
+.flag {
+  position: absolute;
+  height: 15%;
+  top: 8%;
+  z-index: -1;
+  display: none;
+}
+
+#flag-heroku {
+  display: block;
+}
+
+#flag-oregon,
+#flag-virginia {
+  top: 25%;
+}
+
 #trees {
   height: 45%;
   position: absolute;

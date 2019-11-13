@@ -18,6 +18,16 @@ import fireEmbersSvg from '!svg-inline-loader!./images/fire-embers.svg'
 import logos from './images/logos.svg'
 import architectureDiagram from './images/architecture-diagram.svg'
 
+import flagpole from './images/flagpole.svg'
+import flagHeroku from './images/flag-heroku.svg'
+import flagOregon from './images/flag-oregon.svg'
+import flagVirginia from './images/flag-virginia.svg'
+import flagUS from './images/flag-us.svg'
+import flagIreland from './images/flag-ireland.svg'
+import flagJapan from './images/flag-japan.svg'
+import flagAustralia from './images/flag-australia.svg'
+import flagGermany from './images/flag-germany.svg'
+
 // The initial step is 0 which hides everything
 const INITIAL_STEP = 0
 const STEP_COUNT = 10
@@ -162,6 +172,17 @@ const App = ({ ws }) => {
         <div>
           <img src={architectureDiagram} />
         </div>
+      </div>
+      <div id="regional-flags">
+        <img src={flagpole} id="flagpole" />
+        <img className="flag" src={flagHeroku} id="flag-heroku" />
+        <img className="flag" src={flagOregon} id="flag-oregon" />
+        <img className="flag" src={flagVirginia} id="flag-virginia" />
+        <img className="flag" src={flagUS} id="flag-us" />
+        <img className="flag" src={flagIreland} id="flag-ireland" />
+        <img className="flag" src={flagJapan} id="flag-japan" />
+        <img className="flag" src={flagAustralia} id="flag-australia" />
+        <img className="flag" src={flagGermany} id="flag-germany" />
       </div>
       <img src={tent} id="tent" />
       <img src={trees} id="trees" />
