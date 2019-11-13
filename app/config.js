@@ -1,6 +1,6 @@
 export default {
   herokuUrl: 'https://dashboard.heroku.com',
-  githubUrl: 'https://github.com/andyet/pure-heroku-demo-attendee',
+  githubUrl: 'https://github.com/heroku-examples/selfies-from-the-trail-demo',
   keys: {
     prev: 'alt+left',
     next: 'alt+right',
