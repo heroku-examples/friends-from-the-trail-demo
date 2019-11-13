@@ -1,4 +1,4 @@
-# Pure Heroku Demo
+# Friends from the Trail app
 
 ## Local Development
 
@@ -7,7 +7,7 @@ In order to speed up local development, env vars can be written to a `.env` file
 A helper file is included to write the necessary values to the `.env` file:
 
 ```sh
-./bin/write-env pure-heroku-demo-staging
+./bin/write-env friends-from-the-trail-staging
 ```
 
 ### Using a Local Database
@@ -20,7 +20,7 @@ Create a `config/local.json` file with your local database information like this
 {
   "db": {
     "user": "lukekarrys",
-    "database": "pure-heroku-demo"
+    "database": "friends-from-the-trail"
   }
 }
 ```
