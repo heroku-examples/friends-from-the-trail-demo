@@ -66,3 +66,7 @@ Required topics are listed in [`config/default.json#kafka`](./config/default.jso
 heroku kafka:topics:create "$(heroku config:get KAFKA_PREFIX)submission-app"
 heroku kafka:topics:create "$(heroku config:get KAFKA_PREFIX)change-background"
 ```
+
+## Region Flag
+
+The design contains a flag that will be changed depending on the `REGION` environment variable. The possible values are: `dublin`, `frankfurt`, `oregon`, `sydney`, `tokyo`, `virginia`. If no valid value is set then it will default to a Heroku flag.
