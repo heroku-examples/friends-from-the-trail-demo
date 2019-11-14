@@ -2,7 +2,7 @@
   "kafka": {
     "url": "$KAFKA_URL",
     "prefix": "$$KAFKA_PREFIX",
-    "submissionTopic": "${self.kafka.prefix}submission-app",
+    "submissionTopic": "${self.kafka.prefix}selfie-topic",
     "backgroundTopic": "${self.kafka.prefix}change-background"
   },
   "aws": {
