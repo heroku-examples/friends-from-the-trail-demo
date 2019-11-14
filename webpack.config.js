@@ -43,6 +43,9 @@ module.exports = {
       title: 'Friends from the Trail Heroku Demo',
       template: 'app/index.html',
       favicon: 'app/images/favicon.ico'
+    }),
+    new webpack.DefinePlugin({
+      'process.env.SELFIES_APP_REPO_URL': JSON.stringify(process.env.SELFIES_APP_REPO_URL)
     })
   ].filter(Boolean)
 }

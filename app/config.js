@@ -1,6 +1,6 @@
 export default {
   herokuUrl: 'https://dashboard.heroku.com',
-  githubUrl: 'https://github.com/heroku-examples/selfies-from-the-trail-demo',
+  githubUrl: process.env.SELFIES_APP_REPO_URL,
   keys: {
     prev: 'alt+left',
     next: 'alt+right',
