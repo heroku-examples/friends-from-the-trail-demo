@@ -1,5 +1,5 @@
 {
-  "name": "pure-heroku-demo",
+  "name": "friends-from-the-trail-demo",
   "version": "1.0.0",
   "dependencies": {
     "@babel/core": "^7.6.4",
