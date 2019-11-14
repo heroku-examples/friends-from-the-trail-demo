@@ -144,15 +144,9 @@ body.background-3 {
   height: 15%;
   top: 5.5%;
   z-index: -1;
-  display: none;
 }
 
-#flag-heroku {
-  display: block;
-}
-
-#flag-oregon,
-#flag-virginia {
+.flag:nth-child(3) {
   top: 22%;
 }
 
@@ -497,7 +491,11 @@ body.background-3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-image: linear-gradient(30deg, rgba(0,20,50,.95) 0%, rgba(11,68,114,.95) 60%)
+  background-image: linear-gradient(
+    30deg,
+    rgba(0, 20, 50, 0.95) 0%,
+    rgba(11, 68, 114, 0.95) 60%
+  );
 }
 
 #architecture-diagram div img {

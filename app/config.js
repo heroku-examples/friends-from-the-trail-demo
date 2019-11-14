@@ -1,4 +1,5 @@
 export default {
+  ...process.env.CLIENT_CONFIG,
   herokuUrl: 'https://dashboard.heroku.com',
   githubUrl: process.env.SELFIES_APP_REPO_URL,
   keys: {

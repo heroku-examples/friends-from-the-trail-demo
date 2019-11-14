@@ -1,7 +1,10 @@
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const config = require('getconfig')
+const _ = require('lodash')
 const { isDev } = config.getconfig
+
+const CLIENT_CONFIG_KEYS = ['region']
 
 module.exports = {
   output: {
@@ -45,7 +48,10 @@ module.exports = {
       favicon: 'app/images/favicon.ico'
     }),
     new webpack.DefinePlugin({
-      'process.env.SELFIES_APP_REPO_URL': JSON.stringify(process.env.SELFIES_APP_REPO_URL)
+      'process.env.SELFIES_APP_REPO_URL': JSON.stringify(process.env.SELFIES_APP_REPO_URL),
+      'process.env.CLIENT_CONFIG': JSON.stringify(
+        _.pick(config, ...CLIENT_CONFIG_KEYS)
+      )
     })
   ].filter(Boolean)
 }

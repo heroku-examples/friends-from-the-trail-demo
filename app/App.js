@@ -39,6 +39,32 @@ const INITIAL_AUTO = false
 
 const BG_COUNT = 3
 
+const Flag = ({ region }) => {
+  const REGIONS = {
+    dublin: flagIreland,
+    frankfurt: flagGermany,
+    oregon: flagOregon,
+    sydney: flagAustralia,
+    tokyo: flagJapan,
+    virginia: flagVirginia
+  }
+
+  let flags = [REGIONS[region] || flagHeroku]
+
+  if (region === 'oregon' || region === 'virginia') {
+    flags.unshift(flagUS)
+  }
+
+  return (
+    <>
+      <img src={flagpole} id="flagpole" />
+      {flags.map((flag) => (
+        <img className="flag" key={flag} src={flag} />
+      ))}
+    </>
+  )
+}
+
 const App = ({ ws }) => {
   const [background, setBackground] = useState(random(1, BG_COUNT))
   const [
@@ -53,6 +79,7 @@ const App = ({ ws }) => {
   const [step, setStep] = useState(INITIAL_STEP)
   const [auto, setAuto] = useState(INITIAL_AUTO)
   const [status, setStatus] = useState()
+  const [region] = useState(config.region)
 
   // Hot keys to change steps and modes
   useHotkeys(
@@ -174,15 +201,7 @@ const App = ({ ws }) => {
         </div>
       </div>
       <div id="regional-flags">
-        <img src={flagpole} id="flagpole" />
-        <img className="flag" src={flagHeroku} id="flag-heroku" />
-        <img className="flag" src={flagOregon} id="flag-oregon" />
-        <img className="flag" src={flagVirginia} id="flag-virginia" />
-        <img className="flag" src={flagUS} id="flag-us" />
-        <img className="flag" src={flagIreland} id="flag-ireland" />
-        <img className="flag" src={flagJapan} id="flag-japan" />
-        <img className="flag" src={flagAustralia} id="flag-australia" />
-        <img className="flag" src={flagGermany} id="flag-germany" />
+        <Flag region={region} />
       </div>
       <img src={tent} id="tent" />
       <img src={trees} id="trees" />
