@@ -1,5 +1,5 @@
 
-exports.up = function(knex) {
+exports.up = async (knex) => {
   await knex.raw(`
     CREATE OR REPLACE FUNCTION sync_submission_to_connect()
       RETURNS trigger AS
@@ -39,7 +39,7 @@ exports.up = function(knex) {
   `)
 };
 
-exports.down = function(knex) {
+exports.down = async (knex) => {
   await knex.raw('DROP TRIGGER IF EXISTS sync_submission_to_connect ON submissions;')
   await knex.raw('DROP FUNCTION IF EXISTS sync_submission_to_connect();')
 };
