@@ -586,6 +586,38 @@ body.background-3 {
   );
 }
 
+/* URL and QR code */
+#attendee-cta {
+  width: 100%;
+  padding: 2vw;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.4) 50%,
+    rgba(0, 0, 0, 0)
+  );
+  text-align: center;
+  color: white;
+}
+
+#attendee-cta h1 {
+  font-weight: 700;
+  font-size: 4vw;
+  margin-top: 2vh;
+}
+
+#attendee-cta #QR-code {
+  width: 17vw;
+}
+
+#attendee-cta p {
+  font-size: .8vw;
+}
+
 /* Hidden links */
 .hidden-link {
   width: 100px;

@@ -28,6 +28,9 @@ import flagJapan from './images/flag-japan.svg'
 import flagAustralia from './images/flag-australia.svg'
 import flagGermany from './images/flag-germany.svg'
 
+// temporary
+import fpoQRcode from './images/fpo-QR-code.svg'
+
 // The initial step is 0 which hides everything
 const INITIAL_STEP = 0
 const STEP_COUNT = 10
@@ -254,6 +257,18 @@ const App = ({ ws }) => {
         dangerouslySetInnerHTML={{ __html: fireEmbersSvg }}
       />
       <img src={logos} id="logos" data-step="3" />
+
+      <div id="attendee-cta">
+        <div id="cta-url">
+          <p>Visit this URL to share the fun!</p>
+          <h1>https://url.com/lalala</h1>
+        </div>
+        <div id="QR-code">
+          <p>(zoom in to QR code with your camera app)</p>
+          <img src={fpoQRcode} width="100%" height="100%" />
+        </div>
+      </div>
+
       <a
         href={config.herokuUrl}
         target="_blank"
