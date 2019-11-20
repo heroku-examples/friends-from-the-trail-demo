@@ -14,14 +14,15 @@ exports.getAttendeeApp = {
 
 exports.sendAttendeeApp = {
   handler: async (req) => {
-    const { name } = req.payload
-
     req.server.plugins.ws.sendStatus(constants.ATTENDEE_STATUS)
-    req.server.plugins.ws.sendAttendeeApp({ name })
 
-    await req.server.plugins.db.saveAttendeeApp({
-      name
-    })
+    // This route can be used by the attendee apps as a simple ping or to
+    // set their name in the database
+    const { name } = req.payload
+    if (name) {
+      req.server.plugins.ws.sendAttendeeApp({ name })
+      await req.server.plugins.db.saveAttendeeApp({ name })
+    }
 
     return { status: 'success' }
   }
