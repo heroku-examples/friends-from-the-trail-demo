@@ -7,6 +7,7 @@ export default {
     next: 'alt+right',
     clear: 'alt+c',
     reset: 'alt+r',
+    qr: 'alt+q',
     autoToggle: 'alt+a'
   },
   auto: {

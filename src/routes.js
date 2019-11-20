@@ -7,8 +7,13 @@ module.exports = [
     config: controllers.characters
   },
   {
+    method: 'GET',
+    path: '/api/attendee-app',
+    config: controllers.getAttendeeApp
+  },
+  {
     method: 'POST',
-    path: '/api/send-attendee-status',
-    config: controllers.sendAttendeeStatus
+    path: '/api/attendee-app',
+    config: controllers.sendAttendeeApp
   }
 ]

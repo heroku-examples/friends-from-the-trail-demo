@@ -17,6 +17,35 @@ const register = async (server, options) => {
   }
 
   server.expose('pg', db)
+
+  server.expose('getCharacters', async () => {
+    const characters = await db.any('SELECT * FROM characters')
+    return characters.reduce((acc, char) => {
+      acc[char.name] = char.visible
+      return acc
+    }, {})
+  })
+
+  server.expose('saveAttendeeApp', async (data) => {
+    server.log(['db', 'save-attendee-app'], data)
+    await db.none(
+      'INSERT INTO attendee_apps(name, created_at) VALUES($1, $2)',
+      [data.name, new Date()]
+    )
+  })
+
+  server.expose('getLatestApp', async () => {
+    const attendeeApp = await db.any(
+      'SELECT * FROM attendee_apps ORDER BY created_at DESC LIMIT 1'
+    )
+
+    if (!attendeeApp.length) {
+      return {}
+    }
+
+    return attendeeApp[0]
+  })
+
   server.expose('saveSubmission', async (data) => {
     server.log(['db', 'save-submission'], data)
     await db.none(

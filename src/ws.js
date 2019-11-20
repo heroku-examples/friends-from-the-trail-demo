@@ -19,6 +19,7 @@ const register = async (server) => {
 
   server.expose('send', send)
   server.expose('sendStatus', (type) => send(constants.STATUS_UPDATE, { type }))
+  server.expose('sendAttendeeApp', (m) => send(constants.ATTENDEE_APP, m))
   server.expose('sendSubmission', (m) => send(constants.SUBMISSION, m))
   server.expose('sendBackgroundChange', () => send(constants.BACKGROUND_CHANGE))
   server.expose('sendCharacterChange', (m) =>

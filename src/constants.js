@@ -5,7 +5,8 @@ const constants = [
   'BACKGROUND_CHANGE',
   'DATABASE_STATUS',
   'KAFKA_STATUS',
-  'ATTENDEE_STATUS'
+  'ATTENDEE_STATUS',
+  'ATTENDEE_APP'
 ]
 
 module.exports = new Proxy(
