@@ -119,6 +119,12 @@ const App = ({ ws }) => {
   }, [])
 
   useEffect(() => {
+    if (attendeeAppName) {
+      setShowQRCode(true)
+    }
+  }, [attendeeAppName])
+
+  useEffect(() => {
     ws.onmessage = (e) => {
       const { type, data } = JSON.parse(e.data)
       if (type === constants.CHARACTER_CHANGE) {
