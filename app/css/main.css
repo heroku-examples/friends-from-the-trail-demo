@@ -480,6 +480,7 @@ body.background-3 {
   color: white;
   font-size: 4vw;
   text-shadow: 0px 0px 30px rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
 
 #architecture-diagram div {
@@ -585,6 +586,7 @@ body.background-3 {
     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0)
   );
+  z-index: 3;
 }
 
 /* URL and QR code */
@@ -594,29 +596,36 @@ body.background-3 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  justify-content: space-between;
   background-image: linear-gradient(
     to bottom,
     rgba(0, 0, 0, 0.4) 50%,
     rgba(0, 0, 0, 0)
   );
-  text-align: center;
   color: white;
   z-index: 1;
 }
 
+#attendee-cta .container {
+  display: flex;
+  justify-content: space-between;
+}
+
 #attendee-cta h1 {
-  font-weight: 700;
-  font-size: 4vw;
-  margin-top: 2vh;
+  font-weight: 500;
+  font-size: 3.2vw;
 }
 
-#attendee-cta #QR-code {
+#cta-url {
+  margin-top: 8vh;
+  text-align: left;
+}
+
+#QR-code {
   width: 17vw;
+  text-align: center;
 }
 
-#QR-code-container {
+#QR-code svg {
   margin-top: 1em;
   padding: 1em;
   background-color: white;

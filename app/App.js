@@ -274,14 +274,14 @@ const App = ({ ws }) => {
       <img src={logos} id="logos" data-step="3" />
 
       {showQRCode && attendeeAppName && (
-        <div id="attendee-cta">
-          <div id="cta-url">
-            <p>Visit this URL to share the fun!</p>
-            <h1>https://{attendeeAppName}.herokuapp.com</h1>
-          </div>
-          <div id="QR-code">
-            <p>(zoom in to QR code with your camera app)</p>
-            <div id="QR-code-container">
+        <div id="attendee-cta" data-step="3" data-step-action="hide">
+          <div className="container">
+            <div id="cta-url">
+              <h1>https://{attendeeAppName}.herokuapp.com</h1>
+              <p>Visit this URL to share the fun!</p>
+            </div>
+            <div id="QR-code">
+              <p>(zoom in to QR code with your camera app)</p>
               <QRCode
                 renderAs="svg"
                 value={`https://${attendeeAppName}.herokuapp.com`}
