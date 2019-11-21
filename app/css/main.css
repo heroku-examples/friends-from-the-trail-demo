@@ -183,6 +183,7 @@ body.background-3 {
   left: 50%;
   bottom: 0;
   transform: translateX(-50%);
+  z-index: 6;
 }
 
 #fire-embers {
