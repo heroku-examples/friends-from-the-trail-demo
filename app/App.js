@@ -281,12 +281,14 @@ const App = ({ ws }) => {
           </div>
           <div id="QR-code">
             <p>(zoom in to QR code with your camera app)</p>
-            <QRCode
-              renderAs="svg"
-              value={`https://${attendeeAppName}.herokuapp.com`}
-              width="100%"
-              height="100%"
-            />
+            <div id="QR-code-container">
+              <QRCode
+                renderAs="svg"
+                value={`https://${attendeeAppName}.herokuapp.com`}
+                width="100%"
+                height="100%"
+              />
+            </div>
           </div>
         </div>
       )}
