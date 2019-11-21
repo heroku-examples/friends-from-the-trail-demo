@@ -625,7 +625,7 @@ body.background-3 {
   text-align: center;
 }
 
-#QR-code svg {
+#QR-code-container {
   margin-top: 1em;
   padding: 1em;
   background-color: white;
