@@ -8,10 +8,14 @@ This is a demo application meant to be deployed along with [this Salesforce app]
 
 The Heroku app and Salesforce app have configuration dependencies between each other. From a high level, they need to be deployed and updated in the following order. Detailed instructions are farther below.
 
+1. OAuth with Heroku
+1. OAuth with Salesforce
 1. Deploy Heroku app.
-1. Coonfigure Heroku Connect External Objects (i.e. OData interface). Note endpoint URL, username, and password.
-1. Deploy Salesforce app. Use the Heroku External Objects endpoint URL, username, and password.
-1. Configure Heroku Connect Settings: choose Postgres database, authenticate with Salesforce, and configure mappings between Postgres and Salesforce. (TODO: automate the mapping configuration with a `mappings.json` file exported from a configured Heroku Connect instance)
+1. Create Kafka topics
+1. Create Heroku Connect add-on (defined in app.json so this should happen as part of above step)
+1. Configure Heroku Connect External Objects (i.e. OData interface). Note endpoint URL, username, and password.
+1. Deploy Salesforce app. (Use the Heroku External Objects endpoint URL, username, and password.)
+1. Configure Heroku Connect (classic) Settings: choose Postgres database, authenticate with Salesforce, and configure mappings between Postgres and Salesforce. (TODO: automate the mapping configuration with a `mappings.json` file exported from a configured Heroku Connect instance)
 1. Party 🎉
 
 ### Deploy Heroku app
